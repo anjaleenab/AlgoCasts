@@ -14,7 +14,17 @@ function reverse(str) {
   return reverseStr;
 }
 
-//second solution
+//another way
+
+function reverse(str) {
+  let reversed = '';
+  for (let char of str) {
+    reversed = + char;
+  }
+  return reversed;
+}
+
+//another way
 
 function reverse(str) {
   var splitStr = str.split('');
@@ -22,6 +32,7 @@ function reverse(str) {
   var revStr = revSplits.join();
   return revStr;
 }
+
 //a better way
 
 function reverse(str) {

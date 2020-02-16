@@ -14,26 +14,42 @@ function reverse(str) {
   return reverseStr;
 }
 
-//second solution
+//another way
 
-function reverse(str) {
-  var splitStr = str.split('');
-  var revSplits =splitStr.reverse();
-  var revStr = revSplits.join();
-  return revStr;
-}
+// function reverse(str) {
+//   let reversed = '';
+//   for (let char of str) {
+//     reversed +=char;
+//   }
+//   return reversed;
+// }
+
+//another way
+
+// function reverse(str) {
+//   var splitStr = str.split('');
+//   var revSplits =splitStr.reverse();
+//   var revStr = revSplits.join();
+//   return revStr;
+// }
+
 //a better way
 
-function reverse(str) {
-  const arr = str.split('');
-  arr.reverse();
-  return arr.join('');
-}
+// function reverse(str) {
+//   const arr = str.split('');
+//   arr.reverse();
+//   return arr.join('');
+// }
 
 //or you could do
 
-function reverse(str) {
-  return str.split('').reverse().join('');
-}
+// function reverse(str) {
+//   return str.split('').reverse().join('');
+// }
+
+//a final way
+// function reverse(str) {
+//  return str.split('').reduce((rev, char) => char + rev, '');
+// }
 
 module.exports = reverse;

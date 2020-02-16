@@ -14,4 +14,26 @@ function reverse(str) {
   return reverseStr;
 }
 
+//second solution
+
+function reverse(str) {
+  var splitStr = str.split('');
+  var revSplits =splitStr.reverse();
+  var revStr = revSplits.join();
+  return revStr;
+}
+//a better way
+
+function reverse(str) {
+  const arr = str.split('');
+  arr.reverse();
+  return arr.join('');
+}
+
+//or you could do
+
+function reverse(str) {
+  return str.split('').reverse().join('');
+}
+
 module.exports = reverse;

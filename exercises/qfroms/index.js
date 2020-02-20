@@ -14,6 +14,44 @@
 
 const Stack = require('./stack');
 
-class Queue {}
+class Queue {
+  constructor() {
+    this.firstStack = new Stack();
+    this.secondStack = new Stack();
+  }
+
+  add(record) {
+    this.firstStack.push(record);
+  }
+
+  remove() {
+    while(this.firstStack.peek()) {
+      this.secondStack.push(this.firstStack.pop());
+    }
+    var record = this.secondStack.pop();
+
+    while(this.secondStack.peek()) {
+      this.firstStack.push(this.secondStack.pop());
+    }
+
+    return record;
+  }
+
+  peek () {
+    while(this.firstStack.peek()) {
+      this.secondStack.push(this.firstStack.pop());
+    }
+    var record = this.secondStack.peek();
+
+    while(this.secondStack.peek()) {
+      this.firstStack.push(this.secondStack.pop());
+    }
+    return record;
+  }
+}
 
 module.exports = Queue;
+
+//iterates through all of the records that
+//are in the first stack and pushes them into the second one
+//second while loop returns us to the original state

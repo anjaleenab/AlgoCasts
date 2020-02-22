@@ -5,10 +5,20 @@
 class Node {
   constructor(data, next = null) {
   this.data = data;
-  this.next - next;
+  this.next = next;
   }
 }
 
-class LinkedList {}
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
+
+  insertFirst(data) {
+    let headNode = new Node(data, this.head);
+    this.head = headNode;
+  }
+}
+
 
 module.exports = { Node, LinkedList };
